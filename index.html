@@ -262,7 +262,8 @@
       z-index: 3;
     }
     .tree-ui {
-      position: relative; z-index: 10;
+      position: absolute; top: 0; left: 0; right: 0;
+      z-index: 10;
       text-align: center;
       pointer-events: none;
       padding-top: 1.6rem;
@@ -562,8 +563,8 @@
 ════════════════════════════════════════════ -->
 <section class="scene" id="s4">
   <canvas class="bg-canvas" id="c4"></canvas>
-  <img id="tree-img" src="https://raw.githubusercontent.com/taramel/img/main/pohonn.png?v=2"
-    style="position:absolute;bottom:0;left:50%;transform:translateX(-50%);height:92%;max-width:100%;object-fit:contain;object-position:bottom;pointer-events:none;z-index:2;"
+  <img id="tree-img" src="https://raw.githubusercontent.com/taramel/img/main/pohonn.png?v=3"
+    style="position:absolute;bottom:0;left:50%;transform:translateX(-50%);height:72%;max-width:90%;object-fit:contain;object-position:bottom;pointer-events:none;z-index:2;"
     alt="pohon">
   <svg id="tree-svg" xmlns="http://www.w3.org/2000/svg"></svg>
   <div class="tree-ui">
@@ -1645,12 +1646,12 @@ function spawnWishLeaf(sec, wish, W, H, tc) {
   function spawn() {
     const el = document.createElement('div');
     el.className = 'wish-leaf-el';
-    // Spawn terbatas di area pohon — tengah layar, lebar 40%
-    const treeLeft  = W * 0.30;
-    const treeRight = W * 0.70;
-    const treeTop   = H * 0.08;
+    // Spawn terbatas di area pohon — tengah layar, lebar 44%, mulai dari canopy pohon
+    const treeLeft  = W * 0.28;
+    const treeRight = W * 0.72;
+    const treeTop   = H * 0.28;
     let lx = treeLeft + Math.random() * (treeRight - treeLeft);
-    let ly = treeTop + Math.random() * H * 0.20;
+    let ly = treeTop + Math.random() * H * 0.22;
     let vx = (Math.random() - .5) * 0.4;
     let vy = 0.22 + Math.random() * 0.28;
     let rot = Math.random() * 360;
@@ -1709,9 +1710,9 @@ function spawnWishLeaf(sec, wish, W, H, tc) {
       ly += vy;
       rot += rotSpd;
 
-      // Batasi di area pohon (tengah 40%)
-      if (lx < W * 0.25) { lx = W * 0.25; vx = Math.abs(vx) * 0.6; }
-      if (lx > W * 0.75 - sz) { lx = W * 0.75 - sz; vx = -Math.abs(vx) * 0.6; }
+      // Batasi di area pohon (tengah 44%)
+      if (lx < W * 0.24) { lx = W * 0.24; vx = Math.abs(vx) * 0.6; }
+      if (lx > W * 0.72 - sz) { lx = W * 0.72 - sz; vx = -Math.abs(vx) * 0.6; }
 
       el.style.left = lx + 'px';
       el.style.top = ly + 'px';
