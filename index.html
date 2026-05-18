@@ -480,8 +480,8 @@
       66%      { transform: translateY(-3px) rotate(-.4deg); }
     }
 
-    /* ── MOBILE FIXES (max 480px) ──────────────── */
-    @media (max-width: 480px) {
+    /* ── MOBILE FIXES (max 700px) ──────────────── */
+    @media (max-width: 700px) {
 
       /* Scene 1 – Welcome */
       .welcome-wrap { padding: 1.2rem 1.2rem; }
@@ -1095,11 +1095,13 @@ function spawnGiftFlowers() {
   const cy = H * 0.44;
 
   // Ukuran bunga supaya bisa nutupin layar dengan rapat
-  const SIZE = Math.max(W, H) / 5.5;
+  // Di HP portrait, pakai W sebagai acuan agar bunga tidak terlalu kecil
+  const isMobile = W < 700;
+  const SIZE = isMobile ? W / 2.2 : Math.max(W, H) / 5.5;
 
   // Buat grid posisi yang benar-benar menutupi seluruh layar
   // Overlap antar bunga supaya ga ada celah
-  const step  = SIZE * 0.24;  // jarak antar bunga (overlap 48% — rapat banget)
+  const step  = isMobile ? SIZE * 0.20 : SIZE * 0.24;  // lebih rapat di mobile
   const cols  = Math.ceil(W / step) + 2;
   const rows  = Math.ceil(H / step) + 2;
   const positions = [];
@@ -1899,14 +1901,14 @@ function typewriteLetter() {
     ``,
     `Terima kasih udah jadi sahabat di hidup aku,`,
     `terima kasih juga udah menyempatkan waktu untuk main bareng`,
-    `pas kamu pulang dari Pontianak — jujur aku happy banget`,
+    `pas kamu pulang dari Pontianak jujur aku happy banget`,
     `ngelewatin momen-momen itu.`,
     ``,
     `Dan aku selalu nunggu momen kita main bareng lagi hehehe.`,
     ``,
     `Terima kasih juga, udah baik sama aku selama ini.`,
     ``,
-    `Yang pastinya aku selalu mendoakan yang terbaik untukmu —`,
+    `Yang pastinya aku selalu mendoakan yang terbaik untukmu`,
     `dikelilingi orang-orang baik, dimudahkan segala urusan,`,
     `diberi kesehatan, bahagia selalu,`,
     `dan banyak hal-hal baik lain yang akan selalu aku doakan buatmu.`,
@@ -1917,7 +1919,7 @@ function typewriteLetter() {
     ``,
     `Selamat ulang tahun ya.`,
     ``,
-    `Dengan sayang,`,
+    `Dengan cinta,`,
     `Tara Amelia`
   ];
   const full = lines.join('\n');
