@@ -517,7 +517,7 @@
     <h1 class="w-title">Selamat datang di<br>taman rahasiamu</h1>
     <p class="w-sub">Sebelum masuk, beritahu aku namamu.</p>
     <div class="w-form">
-      <label class="w-label" for="nameInput">nama kamu</label>
+      <label class="w-label" for="nameInput">your name</label>
       <input class="w-input" id="nameInput" type="text"
              placeholder="tulis di sini…" autocomplete="off">
       <button class="w-btn" id="enterBtn">Buka Tamannya</button>
@@ -562,7 +562,7 @@
 ════════════════════════════════════════════ -->
 <section class="scene" id="s4">
   <canvas class="bg-canvas" id="c4"></canvas>
-  <img id="tree-img" src="https://cdn.jsdelivr.net/gh/taramel/img@main/pohon.png"
+  <img id="tree-img" src="https://raw.githubusercontent.com/taramel/img/main/pohon.png?v=2"
     style="position:absolute;bottom:0;left:50%;transform:translateX(-50%);height:92%;max-width:100%;object-fit:contain;object-position:bottom;pointer-events:none;z-index:2;"
     alt="pohon">
   <svg id="tree-svg" xmlns="http://www.w3.org/2000/svg"></svg>
@@ -1629,11 +1629,11 @@ function initS4() {
    FALLING WISH LEAVES — scene 4
 ════════════════════════════════════════════════ */
 const LEAF_IMGS = [
-  'https://cdn.jsdelivr.net/gh/taramel/img@main/daun1.png',
-  'https://cdn.jsdelivr.net/gh/taramel/img@main/daun2.png',
-  'https://cdn.jsdelivr.net/gh/taramel/img@main/daun3.png',
+  'https://raw.githubusercontent.com/taramel/img/main/daun1.png',
+  'https://raw.githubusercontent.com/taramel/img/main/daun2.png',
+  'https://raw.githubusercontent.com/taramel/img/main/daun3.png',
 ];
-const LEAF_GOLD_IMG = 'https://cdn.jsdelivr.net/gh/taramel/img@main/daungold.png';
+const LEAF_GOLD_IMG = 'https://raw.githubusercontent.com/taramel/img/main/daungold.png';
 
 function spawnWishLeaf(sec, wish, W, H, tc) {
   const isGold = wish.gold;
@@ -1852,7 +1852,7 @@ function openLetter() {
 function typewriteLetter() {
   const el = document.getElementById('letterBody');
   const lines = [
-    `${userName} cantikkk,`,
+    `${userName} yang tersayang,`,
     ``,
     `Terima kasih udah jadi sahabat di hidup aku,`,
     `terima kasih juga udah menyempatkan waktu untuk main bareng`,
@@ -1874,7 +1874,7 @@ function typewriteLetter() {
     ``,
     `Selamat ulang tahun ya.`,
     ``,
-    `Dengan cinta,`,
+    `Dengan sayang,`,
     `Tara Amelia`
   ];
   const full = lines.join('\n');
